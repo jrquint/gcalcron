@@ -374,7 +374,11 @@ def parse_events(events):
   for event in events:
     start_time = dateutil.parser.parse(event['start']['dateTime']).replace(tzinfo=None)
     end_time   = dateutil.parser.parse(event['end']['dateTime']).replace(tzinfo=None)
-    event_description = '/usr/bin/say ring'
+
+
+    event_description = 'os.path.join(os.path.dirname(__file__), 'ring_bell.sh')
+
+
     # if 'description' in event:
     #   event_description = event['description']
     # logger.debug(event['id'] + '-' + event['status'] + '-' + event['updated'] + ': ' + unicode(start_time) + ' -> ' + unicode(end_time) + ' (' + event['start']['dateTime'] + ' -> ' + event['end']['dateTime'] + ') ' + '=>' + event_description)
