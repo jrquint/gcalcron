@@ -377,7 +377,7 @@ def parse_events(events):
 
 
     event_description = os.path.join(os.path.dirname(__file__), 'ring_bell.sh')
-
+    print(event_description)
 
     # if 'description' in event:
     #   event_description = event['description']
