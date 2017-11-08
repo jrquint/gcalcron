@@ -14,7 +14,7 @@ stayOn=2
 
 #override on time with command argument
 if len(argv) > 1:
-    stayOn = argv[1]
+    stayOn = int(argv[1])
 
 # Set GPIO Mode
 GPIO.setmode(GPIO.BOARD)
