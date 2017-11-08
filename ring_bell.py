@@ -48,7 +48,4 @@ GPIO.output(bell2, GPIO.LOW)
 GPIO.output(bell3, GPIO.LOW)
 GPIO.output(bell4, GPIO.LOW)
 
-GPIO.cleanup(bell1)
-GPIO.cleanup(bell2)
-GPIO.cleanup(bell3)
-GPIO.cleanup(bell4)
+GPIO.cleanup()
