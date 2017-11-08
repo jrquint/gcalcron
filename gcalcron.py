@@ -376,8 +376,8 @@ def parse_events(events):
     end_time   = dateutil.parser.parse(event['end']['dateTime']).replace(tzinfo=None)
 
 
-    event_description = os.path.join(os.path.dirname(__file__), 'ring_bell.sh')
-    print(event_description)
+#    event_description = os.path.join(os.path.dirname(__file__), 'ring_bell.sh')
+    event_description = os.path.join(os.path.dirname(__file__), 'ring_bell.py')
 
     # if 'description' in event:
     #   event_description = event['description']
