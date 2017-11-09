@@ -22,7 +22,11 @@ data = p.communicate()
 split_data = data[0].split()
 ipaddr = split_data[split_data.index('src')+1]
 my_ip = 'Your ip is %s' %  ipaddr
-msg = MIMEText(my_ip)
+arg='curl -4 icanhazip.com'
+p=subprocess.Popen(arg,shell=True,stdout=subprocess.PIPE)
+data = p.communicate()
+ext_ip = 'External IP of %s' % str(data)
+msg = MIMEText(my_ip + '\n' + ext_ip)
 msg['Subject'] = 'IP For RaspberryPi on %s' % today.strftime('%b %d %Y')
 msg['From'] = gmail_user
 msg['To'] = to
