@@ -376,10 +376,11 @@ def parse_events(events):
     end_time   = dateutil.parser.parse(event['end']['dateTime']).replace(tzinfo=None)
 
 
-#    event_description = os.path.join(os.path.dirname(__file__), 'ring_bell.sh')
     event_description = os.path.join(os.path.dirname(__file__), 'ring_bell.py')
 
-    # if 'description' in event:
+    if 'description' in event:
+        duration = event['description']
+        event_description = event_description + ' ' + str(duration)
     #   event_description = event['description']
     # logger.debug(event['id'] + '-' + event['status'] + '-' + event['updated'] + ': ' + unicode(start_time) + ' -> ' + unicode(end_time) + ' (' + event['start']['dateTime'] + ' -> ' + event['end']['dateTime'] + ') ' + '=>' + event_description)
     if event['status'] == 'cancelled':
